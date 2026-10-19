@@ -107,6 +107,24 @@ The following values are reported in the paper's comparison tables. All scores a
 
 The abstract rounds the Russian approach's accuracy to 94%; the table above uses the precise **93.57%** value reported in the experimental tables.
 
+### Joint Multilingual Classification
+
+![Joint multilingual F1-score comparison](docs/graph1.png)
+
+Comparison of fine-tuned XLM-RoBERTa with nine baselines on the combined English–Russian corpus, showing hope, non-hope, and macro F1-scores.
+
+### Translation-Based Classification: English
+
+![English translation-based F1-score comparison](docs/graph2.png)
+
+Comparison of English-RoBERTa with nine baselines after translating Russian comments into English and combining them with the original English corpus.
+
+### Translation-Based Classification: Russian
+
+![Russian translation-based F1-score comparison](docs/graph3.png)
+
+Comparison of Russian-RoBERTa with nine baselines after translating English comments into Russian and combining them with the original Russian corpus.
+
 ### Original-corpus splits reported in the paper
 
 The paper uses an 80:20 development/test split, then divides the development portion 90:10 into training and validation data. Table 3 reports these original-corpus counts:
