@@ -214,5 +214,19 @@ Cite the following study when discussing its cross-lingual methodology or using 
   url     = {https://doi.org/10.1134/S105466182470072X}
 }
 ```
-
 Please also acknowledge the source datasets referenced by the paper when using their underlying material and consult their terms for use of the CSV data.
+
+<a name="license"></a>
+
+## 📜 License
+
+Project code is licensed under the **MIT License**. See [`LICENSE`](LICENSE). Consult the respective sources for terms applying to external models, dictionaries, data, and papers.
+
+<a name="repository-owner"></a>
+
+## 👤 Repository owner
+
+**Muhammad Shahid Iqbal Malik**  
+GitHub: [@MSIMALIK](https://github.com/MSIMALIK)
+
+
