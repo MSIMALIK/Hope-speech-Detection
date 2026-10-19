@@ -84,57 +84,7 @@ The datasets are imbalanced toward non-hope speech. Report class-wise performanc
 
 <a name="workflow"></a>
 
-## 🔄 Multilingual Hope Speech Detection Workflow
 
-```mermaid
-flowchart TD
-    EN["English corpus"]:::source
-    RU["Russian corpus"]:::source
-    EN --> PREP["Clean and normalize comments"]:::prep
-    RU --> PREP
-
-    subgraph JOINT["01 · Joint multilingual"]
-        J1["Retain both languages"] --> J2["Merge original corpora"]
-        J2 --> J3["Combine_Eng_Rus"]
-        J3 --> J4["Tokenize and fine-tune XLM-RoBERTa"]
-    end
-
-    subgraph ENGLISH["02 · Translation into English"]
-        E1["Translate Russian into English"] --> E2["Merge with original English corpus"]
-        E2 --> E3["Combine_Eng"]
-        E3 --> E4["Tokenize and fine-tune English-RoBERTa"]
-    end
-
-    subgraph RUSSIAN["03 · Translation into Russian"]
-        R1["Translate English into Russian"] --> R2["Merge with original Russian corpus"]
-        R2 --> R3["Combine_Rus"]
-        R3 --> R4["Tokenize and fine-tune Russian-RoBERTa"]
-    end
-
-    PREP --> J1
-    PREP --> E1
-    PREP --> R1
-    J4 --> PRED["Predict with each trained model"]:::predict
-    E4 --> PRED
-    R4 --> PRED
-    PRED --> HOPE(["Hope speech"]):::hope
-    PRED --> NONHOPE(["Non-hope speech"]):::nonhope
-
-    classDef source fill:#eef2ff,stroke:#6366f1,color:#312e81,stroke-width:2px
-    classDef prep fill:#fff7ed,stroke:#f59e0b,color:#7c2d12,stroke-width:2px
-    classDef joint fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
-    classDef english fill:#e0f2fe,stroke:#0ea5e9,color:#0c4a6e
-    classDef russian fill:#ccfbf1,stroke:#14b8a6,color:#134e4a
-    classDef predict fill:#1e293b,stroke:#0f172a,color:#ffffff,stroke-width:2px
-    classDef hope fill:#dcfce7,stroke:#22c55e,color:#14532d,stroke-width:2px
-    classDef nonhope fill:#ffe4e6,stroke:#f43f5e,color:#881337,stroke-width:2px
-    class J1,J2,J3,J4 joint
-    class E1,E2,E3,E4 english
-    class R1,R2,R3,R4 russian
-    style JOINT fill:#faf5ff,stroke:#c4b5fd
-    style ENGLISH fill:#f0f9ff,stroke:#7dd3fc
-    style RUSSIAN fill:#f0fdfa,stroke:#5eead4
-```
 
 An original visual summary of the methodology in [Malik et al. (2023)](https://doi.org/10.1016/j.jksuci.2023.101736). The three color-coded paths show joint multilingual learning, translation into English, and translation into Russian. Each path uses its own tokenizer and fine-tuned classifier to predict hope speech or non-hope speech.
 
