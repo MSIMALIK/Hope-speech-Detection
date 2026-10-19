@@ -17,7 +17,6 @@ This repository contains datasets for English and Russian languages:
 
 
 
-
 # 🌍 Hope Speech Detection Datasets: English & Russian
 
 **Original corpora · Translation-based datasets · Joint multilingual evaluation**
@@ -28,13 +27,13 @@ This repository contains datasets for English and Russian languages:
 
 Datasets for **hope speech detection in English and Russian**, supporting experiments with original-language corpora, translation into a shared language, and joint multilingual classification.
 
-**[Paper](https://doi.org/10.1016/j.jksuci.2023.101736) · [Datasets](#datasets) · [Workflow](#workflow) · [Results](#results) · [Usage](#usage) · [Citation](#citation)**
+**[Main paper](https://doi.org/10.1016/j.jksuci.2023.101736) · [Datasets](#datasets) · [Workflow](#workflow) · [Results](#results) · [Usage](#usage) · [Related research](#related-research) · [Citation](#citation)**
 
 <a name="research-basis"></a>
 
 ## 📄 Research basis
 
-These datasets accompany the study **“Multilingual hope speech detection: A Robust framework using transfer learning of fine-tuning RoBERTa model”**, published in *Journal of King Saud University – Computer and Information Sciences* in 2023.
+This repository is primarily based on the study **“Multilingual hope speech detection: A Robust framework using transfer learning of fine-tuning RoBERTa model”**, published in *Journal of King Saud University – Computer and Information Sciences* in 2023.
 
 The paper studies two approaches:
 
@@ -85,8 +84,6 @@ The datasets are imbalanced toward non-hope speech. Report class-wise performanc
 <a name="workflow"></a>
 
 
-
-An original visual summary of the methodology in [Malik et al. (2023)](https://doi.org/10.1016/j.jksuci.2023.101736). The three color-coded paths show joint multilingual learning, translation into English, and translation into Russian. Each path uses its own tokenizer and fine-tuned classifier to predict hope speech or non-hope speech.
 
 ### Dataset-to-model mapping
 
@@ -171,11 +168,21 @@ print(combined.head())
 | `Combine_Eng_Rus.csv` | Joint multilingual corpus |
 | `workflow.mmd` | Editable Mermaid source for the workflow embedded above |
 
+<a name="related-research"></a>
+
+## 🔗 Related research
+
+**Muhammad Shahid Iqbal Malik, Muhammad Rehan, and Aftab Nawaz.** (2024). [Analyzing Cross-Lingual Approaches: a Case Study for Detecting Multilingual Hope Expressions in YouTube Comments](https://doi.org/10.1134/S105466182470072X). *Pattern Recognition and Image Analysis*, **34**(3), 831–843.
+
+This related study investigates joint multilingual hope-expression detection in **English and Urdu** using fine-tuned **mBERT**. It provides methodological context for multilingual learning; its Urdu corpus and experimental results are separate from the English–Russian datasets and RoBERTa results documented here.
+
 <a name="citation"></a>
 
 ## 📖 Citation
 
-Please cite the associated paper when using these datasets:
+### Main paper
+
+Please cite this paper when using the English–Russian datasets:
 
 ```bibtex
 @article{malik2023multilingualhope,
@@ -188,6 +195,24 @@ Please cite the associated paper when using these datasets:
   year    = {2023},
   doi     = {10.1016/j.jksuci.2023.101736},
   url     = {https://doi.org/10.1016/j.jksuci.2023.101736}
+}
+```
+
+### Related paper
+
+Cite the following study when discussing its cross-lingual methodology or using its specific contributions:
+
+```bibtex
+@article{malik2024crosslingualhope,
+  title   = {Analyzing Cross-Lingual Approaches: a Case Study for Detecting Multilingual Hope Expressions in YouTube Comments},
+  author  = {Malik, Muhammad Shahid Iqbal and Rehan, Muhammad and Nawaz, Aftab},
+  journal = {Pattern Recognition and Image Analysis},
+  volume  = {34},
+  number  = {3},
+  pages   = {831--843},
+  year    = {2024},
+  doi     = {10.1134/S105466182470072X},
+  url     = {https://doi.org/10.1134/S105466182470072X}
 }
 ```
 
